@@ -1,0 +1,27 @@
+extends navNoSession.pug
+
+block title
+    title Login
+
+block content_title
+    h1 Login
+
+block main_content
+
+    form(action="/login" method="post")
+        div(class="form-group mb-2")
+            label(for="inputUsername") Login
+            input(type="text" class="form-control" id="inputUsername" name="username" placeholder="Benutzername")
+
+        div(class="form-group mb-2")
+            label(for="inputPassword") Passwort
+            input(type="password" class="form-control" id="inputPassword" name="password" placeholder="Passwort")
+
+        div(class="form-group")
+            button(type="submit" class="btn btn-primary mt-2") Login
+
+    if login_error
+        div(class="alert alert-danger mt-2" role="alert") #{login_error}
+
+    if message
+        div(class="alert alert-success mt-2" role="alert") #{message}

@@ -1,0 +1,44 @@
+extends navLogedIn.pug
+
+block title
+    title Profil
+
+block content_title
+    h1 Profil von #{user.name}
+
+block main_content
+    div(id="user_profile_container")
+        div(id="user_overview_container")
+            div(class="profile_info_container")
+                img(id="large_profile_pic" src="../img/users/" + user.profile_pic + ".png" alt="User profile picture")
+
+            div(id="user_overview_text_container")
+                div(id="profile_text")
+                    p(class="bold_paragraph") Über mich
+                    p(class="regular_paragraph" id="bio_text") #{user.bio_text}
+
+        div(id="user_information")
+            p(class="regular_paragraph") #{user.name}
+            p(class="light_paragraph") OTHer Handle: @#{user.name}
+            p(class="regular_paragraph") Mitglied seit #{user.created}
+
+    div(id="user_others_container")
+        div(class="list-group")
+            div(id="status_bar")
+                p(class="bold_paragraph") #{postcount} mal geOTHert
+                p(class="bold_paragraph") Nutzer folgen: #{followee}
+                p(class="bold_paragraph") Nutzer folgt: #{follower}
+
+            each post in posts
+                li(class="list-group-item")
+                    div(id="post_outer_container")
+
+                        div(id="post_user_pic")
+                            <img id="profile_pic" src="../img/users/#{user.profile_pic}.png" alt="pp">
+
+                        div(id="post_user_content")
+                            div(id="name_created")
+                                p(id="user_name") #{user.name}
+                                p(class="user_addition") @#{user.name}
+                                <p class="user_addition"> - #{post.created}</p>
+                            p(class="post_text") #{post.text}

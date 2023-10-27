@@ -1,0 +1,43 @@
+extends layout.pug
+
+block navItemOne
+    div(class="fs-3")
+        ul(class="nav")
+            li(class="nav-item")
+                i(class="bi bi-house-door-fill me-4")
+            li(class="nav-item")
+                a(class="nav-link text-dark" href="/dashboard") Startseite
+
+block navItemTwo
+    div(class="fs-3")
+        ul(class="nav")
+            li(class="nav-item")
+                i(class="bi bi-person-fill me-4")
+            li(class="nav-item")
+                a(class="nav-link text-dark" href="/myProfile") Mein Profil
+
+block navItemThree
+    div(class="fs-3")
+        ul(class="nav")
+            li(class="nav-item")
+                i(class="bi bi-people-fill me-4")
+            li(class="nav-item")
+                a(class="nav-link text-dark" href="/users") Nutzer
+
+block navItemFour
+    div(class="fs-3")
+        ul(class="nav")
+            li(class="nav-item")
+                i(class="bi bi-person-check-fill me-4")
+            li(class="nav-item")
+                a(class="nav-link text-dark" href="/subscriptions") Abonnenten
+
+block navItemFive
+    div(class="d-grid gap-2 col-7 mb-2")
+        a(class="btn btn-primary" role="button" href="/othern") Othern
+
+block navItemSix
+    div(class="d-grid gap-2 col-7 mb-2")
+        a(class="btn btn-primary" role="button" href="/logout") Logout
+
+block main_content

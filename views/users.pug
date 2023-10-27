@@ -1,0 +1,25 @@
+extends navLogedIn.pug
+
+block title
+    title Registrierte Nutzer
+
+block content_title
+    h1 Registrierte Nutzer
+
+block main_content
+    ul(class="list-group")
+        each row in rows
+            li(class="list-group-item")
+                div(id="whole_row")
+                        img(id="profile_pic" src="img/users/" + row.profile_pic + ".png" alt="pp")
+                        div(id="name_created")
+                            a(class="link-primary" href="/checkUserProfile/" + row.user_id) #{row.name}
+                            p(class="user_addition" class="light_paragraph") @#{row.name}
+
+                if row.exists
+                    div(class="d-grid gap-2 col-6 mx-auto")
+                        a(class="btn btn-danger" href="/unsubscribeUser/" + row.user_id) Entfolgen
+
+                else
+                    div(class="d-grid gap-2 col-6 mx-auto")
+                        a(class="btn btn-success" href="/subscribeUser/" + row.user_id) Folgen

@@ -1,0 +1,24 @@
+extends navLogedIn.pug
+
+block title
+    title Dashboard
+
+block content_title
+    h1 Startseite
+
+block main_content
+    ul(class="list-group")
+        each row in rows
+            li(class="list-group-item")
+
+                div(id="post_outer_container")
+
+                    div(id="post_user_pic")
+                        <img id="profile_pic" src="img/users/#{row.profile_pic}.png" alt="pp">
+
+                    div(id="post_user_content")
+                        div(id="name_created")
+                            a(id="user_name" class="link-primary" href="/checkUserProfile/" + row.user_id) #{row.name}
+                            p(class="user_addition") @#{row.name}
+                            <p class="user_addition"> - #{row.created}</p>
+                        p(class="post_text") #{row.text}

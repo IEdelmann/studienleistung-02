@@ -1,0 +1,40 @@
+extends navLogedIn.pug
+
+block title
+    title Suche
+
+block content_title
+    h1 Suche
+
+block main_content
+    if rows
+        ul(class="list-group")
+            each row in rows
+                li(class="list-group-item")
+                    div(id="whole_row")
+                        div(id="post_search_container")
+
+                            div(id="post_user_pic")
+                                img(id="profile_pic" src="img/users/" + row.profile_pic + ".png" alt="pp")
+
+                            div(id="post_user_content")
+                                div(id="name_created")
+                                    a(class="link-primary" href="/checkUserProfile/" + row.user_id) #{row.name}
+                                    p(class="user_addition") @#{row.name}
+
+                    if row.exists
+                        div(class="d-grid gap-2 col-6 mx-auto")
+                            a(class="btn btn-danger" href="/unsubscribeUserSearch/" + row.user_id) Entfolgen
+
+                    else
+                        div(class="d-grid gap-2 col-6 mx-auto")
+                            a(class="btn btn-success" href="/subscribeUserSearch/" + row.user_id) Folgen
+
+    else if error
+        div(class="alert alert-danger mt-3" role="alert") Mit '#{searchInput}' gab es leider keine Teffer...
+
+    else if subscribtion
+        div(class="alert alert-success mt-3" role="alert") Sie haben den User abonniert!
+
+    else if unsubscribtion
+        div(class="alert alert-warning mt-3" role="alert") Sie haben den User deabonniert!

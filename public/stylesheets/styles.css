@@ -1,0 +1,103 @@
+body {
+  background: lightcyan;
+}
+body #currentPage {
+  font-weight: bold;
+}
+body .nav {
+  display: flex;
+  align-items: center;
+}
+body .row {
+  margin-bottom: 0.5rem;
+}
+body .row .col {
+  margin-left: 0;
+}
+body .row .col #whole_row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .row .col #post_outer_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+body .row .col #post_outer_container #post_user_content {
+  display: flex;
+  flex-direction: column;
+}
+body .row .col #post_outer_container #post_user_content #user_name {
+  display: inline;
+  font-weight: bold;
+}
+body .row .col #post_outer_container #post_user_content .user_addition {
+  display: inline;
+}
+body .row .col #post_outer_container #post_user_content .post_created {
+  margin-top: -1rem;
+}
+body .row .col #post_outer_container #post_user_content .post_text {
+  font-size: 1.5rem;
+}
+body #post_search_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body #profile_pic {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50% 50%;
+  margin: 0.5rem;
+}
+body #large_profile_pic {
+  height: 16rem;
+  width: 16rem;
+  border-radius: 50% 50%;
+}
+body #user_information {
+  margin-top: 1rem;
+}
+body .regular_paragraph {
+  margin-bottom: 0.2rem;
+  font-size: 1.5rem;
+}
+body .light_paragraph {
+  color: darkgray;
+  margin-bottom: 0.2rem;
+}
+body .bold_paragraph {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+  font-size: 1.5rem;
+}
+body #user_others_container {
+  margin-top: 2rem;
+}
+body #status_bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+body #user_overview_container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+body #user_overview_container #profile_text {
+  margin-left: 1.5rem;
+}
+body #name_created {
+  display: flex;
+  flex-direction: row;
+}
+body #updateBioContainer {
+  margin-top: 2rem;
+  margin-left: 1.5rem;
+}
+
+/*# sourceMappingURL=styles.css.map */

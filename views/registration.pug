@@ -1,0 +1,32 @@
+extends navNoSession.pug
+
+block title
+    title Registrieren
+
+block content_title
+    h1 Jetzt auf OTHer registrieren
+
+block main_content
+
+    form(action="/registration" method="post")
+        div(class="form-group mb-2")
+            label(for="inputUsername") Dein Benutzername
+            input(type="text", class="form-control", id="inputUsername", name="username", placeholder="Benutzername")
+
+        div(class="form-group mb-2")
+            label(for="inputUsername") Dein Geburtsdatum
+            input(type="date", class="form-control", id="inputBirthday", name="birthday")
+
+        div(class="form-group mb-2")
+            label(for="inputPassword") Dein Passwort
+            input(type="password", class="form-control", id="inputPassword", name="password", placeholder="Passwort")
+
+        div(class="form-group mb-2")
+            label(for="inputPasswordCheck") Dein Passwort
+            input(type="password", class="form-control", id="inputPasswordCheck", name="passwordCheck", placeholder="Wiederhole dein Passwort")
+
+        div(class="form-group")
+            button(type="submit", class="btn btn-primary mt-2") Jetzt registrieren
+
+    if registration_error
+        div(class="alert alert-danger mt-2" role="alert") #{registration_error}

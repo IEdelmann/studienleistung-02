@@ -1,0 +1,37 @@
+extends navLogedIn.pug
+
+block title
+    title OTHern
+
+block content_title
+    h1 Etwas OTHern...
+
+block main_content
+    if just_sent
+
+        div(id="user_others_container")
+            div(class="list-group")
+                li(class="list-group-item")
+                    div(id="post_outer_container")
+
+                        div(id="post_user_pic")
+                            <img id="profile_pic" src="img/users/#{user.profile_pic}.png" alt="pp">
+
+                        div(id="post_user_content")
+                            div(id="name_created")
+                                p(id="user_name") #{user.name}
+                                p(class="user_addition") @#{user.name}
+                            p(class="post_created") erstellt: #{date}
+                            p(class="post_text") #{just_sent.text}
+
+    if othern_error
+        div(class="alert alert-warning mt-2" role="alert") #{othern_error}
+
+    else
+        form(action="/othern" method="post")
+            div(class="form-group")
+                label(for="othern_input")
+                textarea(class="form-control" id="othern_input" rows="3" name="othern_input" placeholder="Schreibe, um etwas mitzuteilen...")
+
+            div(class="form-group")
+                button(type="submit" class="btn btn-primary mt-2") OTHern
